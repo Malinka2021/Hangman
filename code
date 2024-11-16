@@ -9,9 +9,9 @@ import random
 # Word selection: The game uses a dictionary with levels where each level has a list of words.
 
 word_list = {
-    'easy': ['cat', 'dog', 'fish', 'bat'],
-    'medium': ['lion', 'tiger', 'giraffe', 'elephant'],
-    'hard': ['crocodile', 'hippopotamus', 'rhinoceros', 'kangaroo']
+    'easy': ['red', 'green', 'blue', 'yellow', 'grey', 'black', 'white', 'brown'],
+    'medium': ['orange', 'violet', 'olive', 'pink', 'purple', 'silver', 'gold', 'beige'],
+    'hard': ['indigo', 'maroon', 'cyan', 'lavender', 'lilac', 'lime', 'turquoise', 'navy', 'aquamarine']
 }
 
 # 3
