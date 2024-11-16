@@ -85,7 +85,13 @@ def display_state(word, guessed_letters):
     return ' '.join([letter if letter in guessed_letters else '_' for letter in word])
 
 # 6
-# 
+# Getting user input ensuring it's valid.
+# The loop continues until the used provides a valid guess.
+# The input is stripped from whitespace and converted to lowercase.
+# If the user types 'quit', the game exits.
+# It checks that the input is a single letter and not an already guessed letter.
+# If everything OK, the guessed letter is returned.
+
 def get_user_input(guessed_letters):
     while True:
         guess = input("Guess a letter (or type 'quit' to exit): ").strip().lower()
@@ -99,6 +105,11 @@ def get_user_input(guessed_letters):
         else:
             return guess
 
+# 7
+# Main game function starts the game. 
+# Prompts the user to select a difficulty level and checks if the input is valid.
+# If not valid, it prints an error mess and exits the function.
+
 def main():
     print("Welcome to Hangman!")
     level = input("Choose a difficulty level (easy, medium, hard): ").strip().lower()
@@ -106,13 +117,25 @@ def main():
         print("Invalid level. Please choose 'easy', 'medium', or 'hard'.")
         return
 
+# 8
+# Game Initialization
+# Selects a random word based on the chosed difficulty.
+# Sets up a set to keep track of guessed letters (using a set to avoid duplicates).
+# Initializes lives to 5.
+
     word = choose_word(level)
     guessed_letters = set()
     lives = 5  
 
+# 9
+# Game Loop
+# The loop continues until the player runs out of lives.
+# Inside the loop it displays the current hangman stage based on the lives remaining;
+# the current state of the word (guessed letters revealed); the number of lives left.
+
     while lives > 0:
-        # Display game state
-        print(hangman_stages[5 - lives])  # Ensure lives are between 0 and 5 for index
+        
+        print(hangman_stages[5 - lives])  
         print(display_state(word, guessed_letters))
         print(f"Lives left: {lives}")
 
