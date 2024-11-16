@@ -1,15 +1,23 @@
+# 1
+# Importing required module:
+# Random module allows randomly select a word from pre-defined lists.
+
 import random
 
+#2
 # Pre-defined word collection
 # Word selection: The game uses a dictionary with levels where each level has a list of words.
+
 word_list = {
     'easy': ['cat', 'dog', 'fish', 'bat'],
     'medium': ['lion', 'tiger', 'giraffe', 'elephant'],
     'hard': ['crocodile', 'hippopotamus', 'rhinoceros', 'kangaroo']
 }
 
+# 3
 # ASCII art for Hangman
-# This list contains ASCII representations for different stages og the game.
+# This list contains ASCII representations for different stages of the game.
+
 hangman_stages = [
     '''
         -----
@@ -61,12 +69,23 @@ hangman_stages = [
     '''
 ]
 
+# 4
+# Choosing a word: 
+# The function takes a difficulty level as an argument and returns a random word from the corresponding list.
+
 def choose_word(level):
     return random.choice(word_list[level])
+
+# 5
+# Display the current state of the word based on the letters guessed.
+# List comprehension is used to create a lit of characters (guessed letter => letter, other => _)
+# Returns a string that joins these characters with spaces.
 
 def display_state(word, guessed_letters):
     return ' '.join([letter if letter in guessed_letters else '_' for letter in word])
 
+# 6
+# 
 def get_user_input(guessed_letters):
     while True:
         guess = input("Guess a letter (or type 'quit' to exit): ").strip().lower()
