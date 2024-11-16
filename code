@@ -139,6 +139,13 @@ def main():
         print(display_state(word, guessed_letters))
         print(f"Lives left: {lives}")
 
+# 10
+# User Guess Handling
+# Collects the user's guess using the get_user_input(guessed_letters) function 
+# and adds it to the set of guessed letters.
+# Checks if the guessed letter is in the word (case-sensitive), if it is, congratulated the user;
+# otherwise decrements the lives and informs about incorrect guess.
+
         guess = get_user_input(guessed_letters)
         guessed_letters.add(guess)
 
@@ -148,14 +155,26 @@ def main():
             lives -= 1
             print(f"Sorry, '{guess}' is not in the word.")
 
-        # Check for win condition
+# 11
+# Check for win condition
+# After each guess, checks if the player has gueesed all the letters.
+# If the player has won, congratulates and exits the function.
+
         if all(letter in guessed_letters for letter in word.lower()):
             print(f"Congratulations! You've guessed the word: {word}.")
             return
 
-    # If the player runs out of lives
-    print(hangman_stages[5])  # Display final hangman state
+# 12
+# If the player runs out of lives, displays final hangman state 
+# and informs about the correct word.
+
+    print(hangman_stages[5]) 
     print(f"Game over! The word was: {word}.")
+
+# 13
+# Entry point
+# Checks if the script is being run directly (not imported as a module).
+# If it is, the main() function is called to start the game.
 
 if __name__ == "__main__":
     main()
