@@ -89,7 +89,7 @@ def display_state(word, guessed_letters):
 # The loop continues until the used provides a valid guess.
 # The input is stripped from whitespace and converted to lowercase.
 # If the user types 'quit', the game exits.
-# It checks that the input is a single letter and not an already guessed letter.
+# It checks that the input is a single (len(guess))letter (guess.isalpha()) and not an already guessed letter.
 # If everything OK, the guessed letter is returned.
 
 def get_user_input(guessed_letters):
