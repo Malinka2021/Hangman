@@ -1,6 +1,7 @@
 import random
 
 # Pre-defined word collection
+# Word selection: The game uses a dictionary with levels where each level has a list of words.
 word_list = {
     'easy': ['cat', 'dog', 'fish', 'bat'],
     'medium': ['lion', 'tiger', 'giraffe', 'elephant'],
@@ -8,6 +9,7 @@ word_list = {
 }
 
 # ASCII art for Hangman
+# This list contains ASCII representations for different stages og the game.
 hangman_stages = [
     '''
         -----
